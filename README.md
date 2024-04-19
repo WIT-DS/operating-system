@@ -57,3 +57,14 @@ The Home Assistant Operating System documentation can be found on the [Home Assi
 The Development build GitHub Action Workflow is a manually triggered workflow
 which creates Home Assistant OS development builds. The development builds are
 available at [https://os-artifacts.home-assistant.io/index.html](https://os-artifacts.home-assistant.io/index.html).
+
+
+# Process init
+git config --global user.email "damien.senechal@wit.fr"
+git config --global user.name "Damien S."
+
+https://developers.home-assistant.io/docs/operating-system
+git clone https://github.com/WIT-DS/operating-system.git
+...
+cd operating-system/
+git submodule update --init
