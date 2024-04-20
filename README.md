@@ -59,12 +59,21 @@ which creates Home Assistant OS development builds. The development builds are
 available at [https://os-artifacts.home-assistant.io/index.html](https://os-artifacts.home-assistant.io/index.html).
 
 
-# Process init
+# OS Process init
 git config --global user.email "damien.senechal@wit.fr"
 git config --global user.name "Damien S."
 
 https://developers.home-assistant.io/docs/operating-system
 git clone https://github.com/WIT-DS/operating-system.git
-...
 cd operating-system/
 git submodule update --init
+
+# Build OS
+sudo scripts/enter.sh 
+
+make O=output_ova ova
+make O=output_rpi4_64 rpi4_64
+
+unxz output_ova/images/haos_ova-12.3.dev0.qcow2.xz
+
+qemu-system-x86_64 -enable-kvm -name haos -smp 2 -m 1G -drive file=output_ova/images/haos_ova-12.3.dev0.qcow2,index=0,media=disk,if=virtio,format=qcow2 -drive file=/usr/share/ovmf/x64/OVMF_CODE.fd,if=pflash,format=raw,readonly=on
