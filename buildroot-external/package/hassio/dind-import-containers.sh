@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-APPARMOR_URL="https://version.home-assistant.io/apparmor.txt"
+APPARMOR_URL="https://ma-maison.fun/local/version/apparmor.txt"
 
 # Make sure we can talk to the Docker daemon
 echo "Waiting for Docker daemon..."
