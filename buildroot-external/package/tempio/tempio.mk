@@ -5,7 +5,7 @@
 ################################################################################
 
 TEMPIO_VERSION = 2021.09.0
-TEMPIO_SITE = $(call github,home-assistant,tempio,$(TEMPIO_VERSION))
+TEMPIO_SITE = $(call github,wit-ds,tempio,$(TEMPIO_VERSION))
 TEMPIO_LICENSE = Apache License 2.0
 TEMPIO_LICENSE_FILES = LICENSE
 TEMPIO_GOMOD = github.com/wit-ds/tempio
